@@ -15,15 +15,15 @@ function Table() {
       try {
         const [transactionsResponse, customersResponse] = await Promise.all([
           axios.get(
-            "https://kerolloss.github.io/transactions/transactions.json"
+            "https://ahmedwal7d.github.io/task_Rout/React.json"
           ),
           axios.get(
-            "https://kerolloss.github.io/host_api/customers.json"
+            "https://ahmedwal7d.github.io/task_Rout/customers.json"
           ),
         ]);
 
-        const customers = customersResponse.data.customers;
-        const transactions = transactionsResponse.data.transactions;
+        const customers = customersResponse?.data.customers;
+        const transactions = transactionsResponse?.data.transactions;
 
         const allCustomersData = customers.map((customer) => ({
           ...customer,
@@ -131,11 +131,11 @@ function Table() {
           onKeyUp={handleTransactionSearch}
         />
 
-        <div className="d-flex my-5 px-3">
+        <div className="d-flex my-5 px-3 d-start">
           <button
-            className="btn btn-primary bg-primary text-white me-3"
+            className="btn  bg-dark  text-white me-3"
             onClick={showAllTransactionsChart}>
-            All Customers Chart
+            All  Chart
           </button>
           <button className="btn btn-danger bg-danger text-white " onClick={clearInputs}>
             Clear Inputs
